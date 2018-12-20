@@ -103,12 +103,12 @@ mickey    whine      huey
     :py:class:`AutoField` behaviour (where deleted record IDs can be reused),
     this can lead to subtle bugs. To avoid problems, I recommend that you
     enable foreign-key constraints when using SQLite, by setting
-    ``pragmas={'foreign_keys': 1}`` when you instantiate :py:class:`SqliteDatabase`.
+    ``pragmas=[('foreign_keys', 1)]`` when you instantiate :py:class:`SqliteDatabase`.
 
     .. code-block:: python
 
         # Ensure foreign-key constraints are enforced.
-        db = SqliteDatabase('my_app.db', pragmas={'foreign_keys': 1})
+        db = SqliteDatabase('my_app.db', pragmas=[('foreign_keys', 1)])
 
 Performing simple joins
 -----------------------
